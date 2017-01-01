@@ -28,4 +28,7 @@ gulp.task('serve', ['sass'], function(){
   })
 });
 
-gulp.task('default', ['serve']);
+gulp.task('watch', ['serve', 'sass'], function() {
+  gulp.watch([SOURCEPATHS.sassSource], ['sass']);
+});
+gulp.task('default', ['watch']);
